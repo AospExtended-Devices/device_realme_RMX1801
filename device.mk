@@ -137,6 +137,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_sdm660_shim
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # Configstore
 RODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service \
