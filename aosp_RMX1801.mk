@@ -30,6 +30,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Use Gapps
+ifeq ($(GAPPS_BUILD),true)
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
+endif
+
 PRODUCT_NAME := aosp_RMX1801
 PRODUCT_DEVICE := RMX1801
 PRODUCT_MANUFACTURER := OPPO
