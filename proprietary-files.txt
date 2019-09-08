@@ -136,7 +136,7 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 
 # Camera
-vendor/lib/hw/camera.sdm660.so
+vendor/lib/hw/camera.sdm660.so|f3947d90202eac5a96e7d27d4f09c2f066c66d87
 vendor/lib/libbase64.so
 vendor/lib/libcamera_core_hwi.so
 vendor/lib/libcvface_api.so

@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     Snap
 
+# Camera Shim
+PRODUCT_PACKAGES += \
+    libcamera_sdm660_shim
+
 # Configstore
 RODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service \
