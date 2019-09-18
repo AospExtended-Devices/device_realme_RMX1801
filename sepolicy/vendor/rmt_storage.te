@@ -4,3 +4,6 @@ allow rmt_storage sysfs_mmc:dir search;
 allow rmt_storage sysfs_mmc:file r_file_perms;
 allow rmt_storage sysfs_oembackup:dir search;
 allow rmt_storage sysfs_oembackup:file r_file_perms;
+
+r_dir_file(rmt_storage, sysfs_data)
+r_dir_file(rmt_storage, sysfs_ssr)
