@@ -8,6 +8,9 @@
 # CryptoEng
 /vendor/bin/hw/vendor\.oppo\.hardware\.cryptoeng@1\.0-service                                           u:object_r:hal_cryptoeng_default_exec:s0
 
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                            u:object_r:hal_drm_widevine_exec:s0
+
 # Fingerprint
 /data/system/users/0/fpdata(/.*)?                                                                       u:object_r:fingerprintd_data_file:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.realme_sdm660                   u:object_r:hal_fingerprint_sdm660_exec:s0
