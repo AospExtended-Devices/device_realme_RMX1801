@@ -423,6 +423,7 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
+    libmediaextractorservice \
     libnl
 
 PRODUCT_BOOT_JARS += \
