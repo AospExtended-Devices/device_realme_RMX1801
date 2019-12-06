@@ -64,15 +64,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=384m \
-    dalvik.vm.heapmaxfree=16m \
-    dalvik.vm.heapminfree=4m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heaptargetutilization=0.75 \
-
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.dev_name=rmnet_usb0 \
