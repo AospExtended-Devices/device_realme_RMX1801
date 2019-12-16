@@ -187,6 +187,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Sepolicy
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
