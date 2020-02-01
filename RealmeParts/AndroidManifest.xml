@@ -28,6 +28,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+    <protected-broadcast android:name="org.aospextended.settings.realmeparts.UPDATE_SETTINGS" />
 
     <application
         android:icon="@android:drawable/sym_def_app_icon"
@@ -89,6 +90,12 @@
         <activity
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.Main">
+        </activity>
+
+        <activity
+            android:name=".touch.TouchscreenGestureSettings"
+            android:label="@string/touchscreen_gesture_settings_title"
             android:theme="@style/Theme.Main">
         </activity>
 

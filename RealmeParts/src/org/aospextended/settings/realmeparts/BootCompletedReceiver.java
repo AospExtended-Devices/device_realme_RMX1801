@@ -20,9 +20,12 @@ package org.aospextended.settings.realmeparts;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 import org.aospextended.settings.realmeparts.doze.DozeUtils;
+import org.aospextended.settings.realmeparts.touch.TouchscreenGestureSettings;
 import org.aospextended.settings.realmeparts.vibration.VibratorStrengthPreference;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -30,10 +33,23 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "RealmeParts";
 
+    private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
+
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         DozeUtils.checkDozeService(context);
+        TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
         VibratorStrengthPreference.restore(context);
+    }
+
+    private boolean hasRestoredTunable(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getBoolean(ONE_TIME_TUNABLE_RESTORE, false);
+    }
+
+    private void setRestoredTunable(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        preferences.edit().putBoolean(ONE_TIME_TUNABLE_RESTORE, true).apply();
     }
 }
