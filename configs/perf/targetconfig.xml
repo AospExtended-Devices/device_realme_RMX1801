@@ -57,48 +57,4 @@
 
     </Config1>
 
-    <Config2>
-
-         <TargetInfo
-             Target="sdm630"
-             NumClusters="2"
-             TotalNumCores="8"
-             SocIds="318,327"
-             SynCore="1"
-             MinCoreOnline="0" />
-
-         <ClustersInfo Id="0" NumCores="4" Type="big" />
-         <ClustersInfo Id="1" NumCores="4" Type="little" />
-
-    </Config2>
-
-    <Config3>
-         <TargetInfo
-             Target="sdm658"
-             NumClusters="2"
-             TotalNumCores="6"
-             SocIds="325,326"
-             SynCore="1"
-             CoreCtlCpu="4"
-             MinCoreOnline="0" />
-
-         <ClustersInfo Id="0" NumCores="2" Type="little" />
-         <ClustersInfo Id="1" NumCores="4" Type="big" />
-
-    </Config3>
-
-    <Config4>
-         <TargetInfo
-             Target="sdm455"
-             NumClusters="2"
-             TotalNumCores="8"
-             SocIds="385"
-             SynCore="1"
-             MinCoreOnline="0" />
-
-         <ClustersInfo Id="0" NumCores="4" Type="big" />
-         <ClustersInfo Id="1" NumCores="4" Type="little" />
-
-    </Config4>
-
 </TargetConfig>
