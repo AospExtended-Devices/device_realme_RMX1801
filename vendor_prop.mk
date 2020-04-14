@@ -57,8 +57,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # CNE/ DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1 \
-    persist.vendor.dpm.feature=1
+    persist.vendor.cne.feature=0 \
+    persist.vendor.dpm.feature=0
 
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
