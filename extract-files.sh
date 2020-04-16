@@ -73,6 +73,12 @@ patchelf --remove-needed android.hidl.base@1.0.so \
 patchelf --add-needed libcamera_sdm660_shim.so \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/camera.sdm660.so"
 
+patchelf --replace-needed "libcutils.so" "libprocessgroup.so" \
+        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/audio.primary.sdm660.so"
+
+patchelf --replace-needed "libcutils.so" "libprocessgroup.so" \
+        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib64/hw/audio.primary.sdm660.so"
+
 sed -i 's/<library name="android.hidl.manager-V1.0-java"/<library name="android.hidl.manager@1.0-java"/g' \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/etc/permissions/qti_libpermissions.xml"
 
