@@ -81,10 +81,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := RMX1801
 
-# Boot Animation
-TARGET_SCREEN_HEIGHT := 2340
-TARGET_SCREEN_WIDTH := 1080
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files

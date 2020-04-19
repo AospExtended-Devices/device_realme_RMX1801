@@ -25,9 +25,9 @@ VENDOR=realme
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="${MY_DIR}/../../.."
+AOSP_ROOT="${MY_DIR}/../../.."
 
-HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+HELPER="${AOSP_ROOT}/vendor/aosp/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -60,26 +60,26 @@ if [ -z "${SRC}" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${AOSP_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
 # Fix proprietary blobs
 patchelf --remove-needed android.hidl.base@1.0.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libwfdnative.so"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib/libwfdnative.so"
 patchelf --remove-needed android.hidl.base@1.0.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libwfdnative.so"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/lib64/libwfdnative.so"
 
 patchelf --add-needed libcamera_sdm660_shim.so \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/camera.sdm660.so"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/camera.sdm660.so"
 
 patchelf --replace-needed "libcutils.so" "libprocessgroup.so" \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/audio.primary.sdm660.so"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib/hw/audio.primary.sdm660.so"
 
 patchelf --replace-needed "libcutils.so" "libprocessgroup.so" \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib64/hw/audio.primary.sdm660.so"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/vendor/lib64/hw/audio.primary.sdm660.so"
 
 sed -i 's/<library name="android.hidl.manager-V1.0-java"/<library name="android.hidl.manager@1.0-java"/g' \
-        "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/etc/permissions/qti_libpermissions.xml"
+        "${AOSP_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/etc/permissions/qti_libpermissions.xml"
 
 "${MY_DIR}/setup-makefiles.sh"
