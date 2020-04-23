@@ -1,13 +1,13 @@
 [
   {
-    "remote": "github",
-    "repository": "RMX1801/android_kernel_realme_sdm660",
+    "remote": "aex-devices",
+    "repository": "kernel_realme_sdm660",
     "target_path": "kernel/realme/sdm660",
     "branch": "10.x"
   },
   {
-    "remote": "github",
-    "repository": "RMX1801/proprietary_vendor_realme",
+    "remote": "aex-devices",
+    "repository": "vendor_realme",
     "target_path": "vendor/realme",
     "branch": "10.x"
   }
