@@ -173,10 +173,6 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.5 \
     vendor.display.config@1.3.vendor
 
-# Doze
-PRODUCT_PACKAGES += \
-    RealmeParts
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -318,6 +314,13 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
+
+# RealmeParts
+PRODUCT_PACKAGES += \
+    RealmeParts
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-realmeparts.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-realmeparts.xml
 
 # RenderScript
 PRODUCT_PACKAGES += \
