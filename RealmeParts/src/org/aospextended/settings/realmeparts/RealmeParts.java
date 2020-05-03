@@ -29,6 +29,7 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
 import org.aospextended.settings.realmeparts.doze.DozeSettingsActivity;
+import org.aospextended.settings.realmeparts.vibration.VibratorStrengthPreference;
 
 public class RealmeParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -45,6 +46,9 @@ public class RealmeParts extends PreferenceFragment implements
                 return true;
             }
         });
+
+        VibratorStrengthPreference mVibratorStrength = findPreference("vib_strength");
+        mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
     }
 
     @Override
