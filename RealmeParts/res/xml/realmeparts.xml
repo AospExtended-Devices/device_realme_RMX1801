@@ -31,6 +31,24 @@
 
     </PreferenceCategory>
 
+
+    <PreferenceCategory
+        android:key="display"
+        android:title="@string/display_category">
+
+        <Preference
+            android:key="device_kcal"
+            android:persistent="false"
+            android:icon="@drawable/ic_kcal"
+            android:title="@string/device_kcal_title"
+            android:summary="@string/device_kcal_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.aospextended.realmeparts.kcal.KCalSettingsActivity"
+                android:targetPackage="org.aospextended.realmeparts.kcal"/>
+        </Preference>
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:title="@string/touchscreen_gesture_category">
 
