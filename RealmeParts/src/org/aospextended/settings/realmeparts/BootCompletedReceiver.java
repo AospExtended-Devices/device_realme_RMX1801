@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
@@ -41,6 +42,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         DozeUtils.checkDozeService(context);
         TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
         VibratorStrengthPreference.restore(context);
+        FileUtils.setValue(RealmeParts.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                RealmeParts.PREF_USB_FASTCHARGE, 1));
     }
 
     private boolean hasRestoredTunable(Context context) {

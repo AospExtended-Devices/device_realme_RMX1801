@@ -124,4 +124,9 @@
     <string name="touchscreen_gesture_action_next_track">Play the next music track</string>
     <string name="touchscreen_gesture_action_volume_down">Lower media volume</string>
     <string name="touchscreen_gesture_action_volume_up">Raise media volume</string>
+
+    <!-- USB fastcharge -->
+    <string name="fastcharge_control">USB Fastcharge Control</string>
+    <string name="fastcharge_title">Enable USB Fastcharge</string>
+    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
 </resources>
