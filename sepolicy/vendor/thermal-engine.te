@@ -1,2 +1,4 @@
 allow thermal-engine sysfs_oembackup:dir search;
 allow thermal-engine sysfs_oembackup:file { r_file_perms getattr };
+
+dontaudit thermal-engine self:capability dac_override;
